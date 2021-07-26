@@ -51,7 +51,7 @@ public class MpGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setDbType(DbType.MYSQL);
+        dsc.setDbType(DbType.ORACLE);
         dsc.setTypeConvert(new MySqlTypeConvert(){
             // 自定义数据库表字段类型转换【可选】
             @Override
@@ -61,10 +61,10 @@ public class MpGenerator {
                 return super.processTypeConvert(fieldType);
             }
         });
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("123456");
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/eth?characterEncoding=utf8");
+        dsc.setDriverName("oracle.jdbc.driver.OracleDriver");
+        dsc.setUsername("sunshine");
+        dsc.setPassword("sunshine");
+        dsc.setUrl("jdbc:oracle:thin:@192.168.107.141:1521/orcl");
         mpg.setDataSource(dsc);
 
         // 策略配置
